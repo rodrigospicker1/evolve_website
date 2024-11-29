@@ -61,29 +61,44 @@ const thirdColumn = testimonials.slice(6, 9);
 const TestimonialsColumn = (props: { className?: string, testimonials: typeof testimonials, duration?: number }) => {
   return (
     <div className={props.className}>
-      <motion.div animate={{translateY: "-50%",}} transition={{duration: props.duration || 5, repeat: Infinity, ease: "linear", repeatType: "loop",}} className="flex flex-col gap-6 pb-6">
+      <motion.div
+        animate={{ translateY: "-50%" }}
+        transition={{
+          duration: props.duration || 5,
+          repeat: Infinity,
+          ease: "linear",
+          repeatType: "loop",
+        }}
+        className="flex flex-col gap-6 pb-6"
+      >
         {[...new Array(2)].fill(0).map((_, index) => (
           <React.Fragment key={index}>
-          {props.testimonials.map(({text, imageSrc, name, username}, index) => (
-            <div className="card border-none">
-              <div>{text}</div>
-              <div className="flex items-center gap-2 mt-5">
-                <Image key={index} src={user.src} alt={name} width={40} height={40} className="h-10 w-10 rounded-full" />
-                <div className="flex flex-gap">
-                  <div className="font-medium tracking-tight leading-5">
-                    {name}
+            {props.testimonials.map(({ text, imageSrc, name }, idx) => (
+              <div key={`${name}-${idx}`} className="card border-none">
+                <div>{text}</div>
+                <div className="flex items-center gap-2 mt-5">
+                  <Image
+                    src={imageSrc}
+                    alt={name}
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 rounded-full"
+                  />
+                  <div className="flex flex-gap">
+                    <div className="font-medium tracking-tight leading-5">
+                      {name}
+                    </div>
                   </div>
-                  {/* <div className="leading-5 tracking-tight">{username}</div> */}
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
           </React.Fragment>
         ))}
       </motion.div>
     </div>
   );
 };
+
 
 export const Testimonials = () => {
   return (
