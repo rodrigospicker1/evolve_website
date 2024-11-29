@@ -122,8 +122,8 @@ export const Pricing = () => {
                 <a href="https://w.app/W9ZnlF">{pricingTier.buttonText}</a>
               </button>
               <ul className="flex flex-col gap-5 mt-8">
-                {pricingTier.features.map((feature) => (
-                  <li className="text-sm flex items-center gap-4">
+                {pricingTier.features.map((feature, index) => (
+                  <li key={index} className="text-sm flex items-center gap-4">
                     <CheckIcon className="h-6 w-6" />
                     {feature}
                   </li>
