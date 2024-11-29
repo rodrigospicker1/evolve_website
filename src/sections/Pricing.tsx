@@ -102,7 +102,7 @@ export const Pricing = () => {
           </p> */}
         </div>
         <div className="flex flex-col gap-6 items-center mt-10 lg:flex-row lg:items-end lg:justify-center">
-          {pricingTiers.map((pricingTier) => (
+          {pricingTiers.map((pricingTier, index) => (
             <div className={twMerge ("p-10 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full", pricingTier.inverse == true && 'borer-black bg-black text-white')}>
               <div className="flex justify-between">
                 <h3 className={twMerge("text-lg font-bold text-black/50", pricingTier.inverse == true && 'text-white/60')}>{pricingTier.title}</h3>
@@ -115,7 +115,7 @@ export const Pricing = () => {
                 )}
                  
               </div>
-              <img src={pricingTier.image.src} alt={pricingTier.title} className="mt-2 h-70 rounded-xl mb-4" /> 
+              <img key={index} src={pricingTier.image.src} alt={pricingTier.title} className="mt-2 h-70 rounded-xl mb-4" /> 
               <div className="flex items-baseline gap-1 mt-[30px]">
               </div>
               <button className={twMerge("btn btn-primary w-full mt-[30px]", pricingTier.inverse == true && 'bg-white text-black')}>

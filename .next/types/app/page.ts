@@ -1,4 +1,4 @@
-// File: C:\Users\8054703\Desktop\projetos_rodrigo\landing page\tribe-light-saas-landing-page\src\app\page.tsx
+// File: /workspaces/evolve_website/src/app/page.tsx
 import * as entry from '../../../src/app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
